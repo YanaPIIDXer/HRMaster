@@ -1,0 +1,60 @@
+@startuml ユースケース図
+
+left to right direction
+
+actor 社員
+actor 人事担当
+
+rectangle 社員情報管理 {
+  usecase 採用手続き
+  usecase 退職手続き
+  usecase 情報参照
+  usecase 情報更新
+}
+
+人事担当 --> 採用手続き
+人事担当 --> 退職手続き
+人事担当 --> 情報参照
+人事担当 --> 情報更新
+
+rectangle 勤怠管理 {
+  usecase 出勤
+  usecase 退勤
+  usecase 休憩管理
+}
+
+社員 --> 出勤
+社員 --> 退勤
+社員 --> 休憩管理
+
+rectangle 給与計算 {
+  usecase 給与明細確認
+}
+
+社員 --> 給与明細確認
+
+rectangle 人事評価 {
+  usecase 評価基準登録
+  usecase 評価基準確認
+  usecase 目標登録
+  usecase 成果登録
+  usecase 他社員の評価登録
+  usecase 面談フィードバック登録
+  usecase 面談フィードバック確認
+}
+
+人事担当 --> 評価基準登録
+社員 --> 評価基準確認
+社員 --> 目標登録
+社員 --> 成果登録
+社員 --> 他社員の評価登録
+人事担当 --> 面談フィードバック登録
+社員 --> 面談フィードバック確認
+
+rectangle 人事異動の履歴管理 {
+  usecase 履歴確認
+}
+
+人事担当 --> 履歴確認
+
+@enduml
