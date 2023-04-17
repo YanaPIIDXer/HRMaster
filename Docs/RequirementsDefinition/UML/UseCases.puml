@@ -5,6 +5,16 @@ left to right direction
 actor 社員
 actor 人事担当
 
+rectangle 認証 {
+  usecase ログイン
+  usecase ログアウト
+}
+
+社員 --> ログイン
+社員 --> ログアウト
+人事担当 --> ログイン
+人事担当 --> ログアウト
+
 rectangle 社員情報管理 {
   usecase 採用手続き
   usecase 退職手続き
